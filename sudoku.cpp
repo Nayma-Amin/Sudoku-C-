@@ -17,14 +17,12 @@ void printSudoku(int sudoku[][100]) {
 }
 
 bool emptyCell(int sudoku[][100], int row, int col, int n) {
-    // Row and column check
     for (int i = 0; i < N; i++) {
         if (sudoku[row][i] == n || sudoku[i][col] == n) {
             return false;
         }
     }
 
-    // Sub-grid check
     int startR = row - row % (int)sqrt(N);
     int startC = col - col % (int)sqrt(N);
 
@@ -135,4 +133,5 @@ void start() {
 int main() {
     menu();
     return 0;
+
 }
